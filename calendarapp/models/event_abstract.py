@@ -1,13 +1,12 @@
 from django.db import models
+from .object_abstract import ObjectAbstract
 
 
-class EventAbstract(models.Model):
+class EventAbstract(ObjectAbstract):
     """ Event abstract model """
 
     is_active = models.BooleanField(default=True)
     is_deleted = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract = True
