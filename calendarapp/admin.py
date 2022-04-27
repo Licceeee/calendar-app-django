@@ -1,10 +1,10 @@
 from django.contrib import admin
-from calendarapp import models
+from calendarapp.models import Event, EventMember
 
 
-@admin.register(models.Event)
+@admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    model = models.Event
+    model = Event
     list_display = [
         "id",
         "title",
@@ -18,8 +18,8 @@ class EventAdmin(admin.ModelAdmin):
     search_fields = ["title"]
 
 
-@admin.register(models.EventMember)
+@admin.register(EventMember)
 class EventMemberAdmin(admin.ModelAdmin):
-    model = models.EventMember
+    model = EventMember
     list_display = ["id", "event", "user", "created_at", "updated_at"]
     list_filter = ["event"]
