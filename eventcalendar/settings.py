@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "i8e1s3!_(fjsiv%1pn3sb3o=s)!p*nzwh1$gp5-l&%nb!d=y_s"
+SECRET_KEY = "secret-key-placeholder"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,9 +91,12 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation."
         "UserAttributeSimilarityValidator"
     },
-    {"NAME": "django.contrib.auth.password_validation." "MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation." "CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation." "NumericPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation."
+     "MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation."
+     "CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation."
+     "NumericPasswordValidator"},
 ]
 
 AUTH_USER_MODEL = "accounts.User"
