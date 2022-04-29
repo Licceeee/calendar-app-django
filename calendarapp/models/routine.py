@@ -23,8 +23,12 @@ class Routine(ObjectAbstract):
 class DailyRoutine(ObjectAbstract):
     """ Daily Routine model """
 
-    date = models.DateField(default=datetime.now, unique=True)
+    date = models.DateField(default=datetime.now)
     routine = models.ForeignKey(Routine, on_delete=models.CASCADE)
+
+    def get_user(self):
+        return self.routine.user
+    get_user.short_description = "# Total Workouts"
 
     class Meta:
         unique_together = ["date", "routine"]

@@ -38,7 +38,7 @@ class RoutineAdmin(admin.ModelAdmin):
 
 @admin.register(DailyRoutine)
 class DailyRoutineAdmin(admin.ModelAdmin):
-    list_display = ["date", "routine"]
+    list_display = ["date", "routine", "get_user"]
     autocomplete_fields = ["routine"]
 
     # filters routines by logged in user // for dropdown - not for autocomplete
